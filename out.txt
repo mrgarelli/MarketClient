@@ -1,0 +1,30 @@
+_NET_WM_DESKTOP(CARDINAL) = 1
+_NET_WM_STATE(ATOM) = 
+WM_STATE(WM_STATE):
+		window state: Normal
+		icon window: 0x0
+_NET_WM_USER_TIME(CARDINAL) = 653688556
+_NET_WM_ICON_NAME(UTF8_STRING) = 
+_NET_WM_ICON(CARDINAL) = 	Icon (128 x 128):
+
+XdndAware(ATOM) = BITMAP
+WM_NAME(STRING) = "Android Emulator - Pixel_4_XL_API_30:5554"
+_NET_WM_NAME(UTF8_STRING) = "Android Emulator - Pixel_4_XL_API_30:5554"
+_MOTIF_WM_HINTS(_MOTIF_WM_HINTS) = 0x2, 0x1, 0x0, 0x0, 0x0
+_NET_WM_WINDOW_TYPE(ATOM) = _KDE_NET_WM_WINDOW_TYPE_OVERRIDE, _NET_WM_WINDOW_TYPE_NORMAL
+_XEMBED_INFO(_XEMBED_INFO) = 0x0, 0x1
+WM_CLIENT_LEADER(WINDOW): window id # 0x2800007
+WM_HINTS(WM_HINTS):
+		Client accepts input or input focus: True
+		window id # of group leader: 0x2800007
+WM_CLIENT_MACHINE(STRING) = "ua"
+_NET_WM_PID(CARDINAL) = 368939
+_NET_WM_SYNC_REQUEST_COUNTER(CARDINAL) = 41943046
+WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
+WM_NORMAL_HINTS(WM_SIZE_HINTS):
+		user specified location: 16, 724
+		user specified size: 315 by 667
+		program specified minimum size: 200 by 200
+		window gravity: Static
+
+for_window [title="^Android Emulator - *"] floating enable
