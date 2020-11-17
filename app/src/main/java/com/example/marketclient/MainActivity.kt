@@ -2,8 +2,9 @@ package com.example.marketclient
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.marketclient.components.GroceryRow
 import kotlinx.android.synthetic.main.activity_main.addGroceryButton
-import kotlinx.android.synthetic.main.activity_main.value
+import kotlinx.android.synthetic.main.activity_main.groceryListTable
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -22,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        value.text = "hey"
 
         val callBackHome = object: Callback {
             override fun onResponse(call: Call, response: Response) {
@@ -32,7 +32,10 @@ class MainActivity : AppCompatActivity() {
                         if (jsonStr != null) {
                             val groceries = Json.decodeFromString<MutableList<GroceryItem>>(jsonStr)
                             GlobalScope.launch(Dispatchers.Main) {
-                                value.text = groceries[0].name
+                                for (grocery: GroceryItem in groceries) {
+                                    val groceryRow = GroceryRow(this@MainActivity, grocery)
+                                    groceryListTable.addView(groceryRow)
+                                }
                             }
                         }
                     }
@@ -45,9 +48,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
         val url = "http://10.0.2.2:8080/"
+        request.GET(url, callBackHome)
 
         addGroceryButton.setOnClickListener {
-            request.GET(url, callBackHome)
         }
     }
 }
